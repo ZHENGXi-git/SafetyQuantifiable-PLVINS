@@ -1,0 +1,8 @@
+prefix=/home/zx/catkin_ws/src/2D-3D-pose-tracking-master/map_fusion/cmake-build-debug/devel
+
+Name: map_fusion
+Description: Description of map_fusion
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

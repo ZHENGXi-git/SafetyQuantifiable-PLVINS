@@ -1,0 +1,25 @@
+<launch>
+<!--V1_01_easy V1_02_medium V1_03_difficult V2_01_easy V2_02_medium V2_03_difficult-->
+	<arg name="sequence_name" default = "V1_02_medium" />
+    <arg name="cloud_name"  default="$(find map_fusion)/config/$(arg sequence_name)/dataseg.ply"/>
+    <arg name="global_pose_name" default="$(find map_fusion)/config/$(arg sequence_name)/data.csv"/>
+    <arg name="config_file" default="$(find map_fusion)/config/$(arg sequence_name)/sensor.yaml" />
+
+    <node name="tracking_node" pkg="map_fusion" type="window_tracking_node" output="screen">
+        <param name="config_file" type="string" value="$(arg config_file)" />
+        <param name="lines_map" type="string" value="$(find map_fusion)/config/$(arg sequence_name)/line_3d.txt" />
+        <param name="chi_square_threshold" type="string" value="$(find map_fusion)/config/$(arg sequence_name)/AlarmThreshold.txt" />
+    </node>
+
+    <node name="euroc_publisher" pkg="initialization_publisher" type="euroc_publisher" output="screen">
+        <param name="data_name" type="string" value="$(arg global_pose_name)" />
+        <param name="cloud_name" type="string" value="$(arg cloud_name)" />
+        <param name="config_file" type="string" value="$(arg config_file)" />
+        <remap from="~estimated_odometry" to="/vins_estimator/odometry" />
+    </node>
+
+    <node name="linefeature_detection" pkg="linefeature_detection" type="linefeature_detection" output="screen">
+        <param name="config_file" type="string" value="$(arg config_file)" />
+    </node>
+
+</launch>

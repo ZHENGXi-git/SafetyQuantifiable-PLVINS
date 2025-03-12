@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/zx/catkin_ws/src/2D-3D-pose-tracking-master/map_fusion/cmake-build-debug/devel/setup.sh
