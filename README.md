@@ -7,7 +7,17 @@
 
 1.2 Dependency: Eigen3, Opencv4, and Ceres Solver.
 
-### 2. Build on ROS
+### 2. Build VINS-Mono on ROS
+Clone the repository and catkin_make:
+```
+    cd ~/catkin_ws/src
+    git clone https://github.com/HKUST-Aerial-Robotics/VINS-Mono.git
+    cd ../
+    catkin_make
+    source ~/catkin_ws/devel/setup.bash
+```
+
+### 3. Build SQ-PLVINS on ROS
 
 Clone the repository and catkin_make:
 ```
@@ -18,7 +28,7 @@ Clone the repository and catkin_make:
     source ~/catkin_ws/devel/setup.bash
 ```
 
-### 3. Run on EuRoC dataset
+### 4. Run on EuRoC dataset
 
 Download [EuRoC MAV Dataset](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets).
 
