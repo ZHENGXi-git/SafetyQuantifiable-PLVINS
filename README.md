@@ -54,3 +54,6 @@ We would like to thank the authors of VINS for their generous sharing!
 
 ### 7. Licence
 The source code is released under [GPLv3](https://www.gnu.org/licenses/) license.
+
+### 8. Citation
+Zheng X, Wen W, Hsu L T. Safety-quantifiable line feature-based monocular visual localization with 3d prior map[J]. IEEE Transactions on Intelligent Transportation Systems, 2025.
